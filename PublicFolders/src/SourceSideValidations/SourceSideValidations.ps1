@@ -8,16 +8,16 @@ param (
     [switch]
     $SlowTraversal,
 
-    [Parameter(Mandatory = $true, ParameterSetName = "Repair")]
-    [Switch]
-    $Repair,
+    [Parameter(Mandatory = $true, ParameterSetName = "Fix")]
+    [string[]]
+    $Fix,
 
     [Parameter(Mandatory = $true, ParameterSetName = "SummarizePreviousResults")]
     [Switch]
     $SummarizePreviousResults,
 
     [Parameter(ParameterSetName = "Default")]
-    [Parameter(ParameterSetName = "Repair")]
+    [Parameter(ParameterSetName = "Fix")]
     [Parameter(ParameterSetName = "SummarizePreviousResults")]
     [string]
     $ResultsFile = (Join-Path $PSScriptRoot "ValidationResults.csv"),
